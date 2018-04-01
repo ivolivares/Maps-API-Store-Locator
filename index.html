@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza store Locator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+  <link rel="shortcut icon" href="http://www.icons101.com/icons/35/Swarm_App_Sticker_Icons_by_Sonya/128/Pizza-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="toggle_styles" class="toggle-box">
+    <input type="checkbox" name="checkbox1" id="toggle-box-checkbox" />
+    <label for="toggle-box-checkbox" class="toggle-box-label-left"></label>
+    <label for="toggle-box-checkbox" class="toggle-box-label"></label>
+  </div>
+  <div id="searchLocator">
+    <form id="searchStore">
+      <input type="search" id="userInput" size="15" autocomplete="off" placeholder="Search a pizza store from a direction" />
+      <select id="userRadius">
+        <option value="0" selected>in a radius</option>
+        <option value="1000">in 1000 kms</option>
+        <option value="500">in 500 kms</option>
+        <option value="100">in 100 kms</option>
+        <option value="50">in 50 kms</option>
+        <option value="30">in 30 kms</option>
+        <option value="20">in 20 kms</option>
+        <option value="10">in 10 kms</option>
+      </select>
+      <input type="submit" id="searchButton" value="Search" />
+    </form>
+  </div>
+  <div id="directionsPanel"></div>
+  <div id="map"></div>
+  <script src="./js/data/icon_gps.js"></script>
+  <script src="./js/data/locations.js"></script>
+  <script src="./js/utils/styles.js"></script>
+  <script src="./js/utils/messages.js"></script>
+  <script src="./js/utils/math.js"></script>
+  <script src="./js/utils/services.js"></script>
+  <script src="./js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjHdd9gTTmUflFbvxwkHgrEC7q5D8L0Ug&libraries=places&callback=initMap"></script>
+</body>
+</html>

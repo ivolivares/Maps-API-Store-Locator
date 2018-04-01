@@ -1,0 +1,187 @@
+@import 'toggle.css';
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  background-color: #eee;
+}
+
+:focus {
+    outline: none;
+}
+
+#message {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5019607843137255);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message p {
+  width: 30vw;
+  padding: 20px;
+  color: #e6543f;
+  background-color: #FFF;
+}
+
+#map {
+  transition: all .3s ease-in-out;
+  height: 100%;
+  z-index: 1;
+}
+
+body.directions_open #map {
+  position: absolute;
+  left: 25vw;
+  top: 0;
+  width: 80vw;
+}
+
+#toggle_styles {
+  position: absolute;
+  right: 35px;
+  top: 7px;
+  z-index: 2;
+}
+
+#searchLocator {
+  position: absolute;
+  top: 9px;
+  left: 115px;
+  z-index: 2;
+  background: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 450px;
+  height: 30px;
+  overflow: hidden;
+  border-bottom: 1px solid transparent;
+  padding: 2px 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+  transition: all .3s ease-in-out;
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+body.directions_open #searchLocator {
+  left: 33vw;
+}
+
+#searchStore {
+  width: 100%;
+}
+
+#userInput {
+  -webkit-appearance: none;
+  border: none;
+  padding: 0 0 0 10px; 
+  margin: 0;
+  height: 26px;
+  width: 60%;
+  background-color: transparent;
+  color: #000;
+  transition: all 0.218s;
+  opacity: 1;
+  text-align: left;
+}
+
+#userInput::placeholder {
+  color: silver;
+  -webkit-text-fill-color: silver;
+}
+
+#userRadius {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 10px;
+  margin: 0px;
+  height: 26px;
+}
+
+#userRadius:focus,
+#userRadius:hover {
+  background-color: #7474741a;
+}
+
+#searchButton {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  height: 26px;
+}
+
+#searchButton:focus,
+#searchButton:hover {
+  background-color: #7474741a;
+}
+
+#directionsPanel {
+  position: absolute;
+  z-index: 2;
+  background: #FFF;
+  width: 25vw;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  box-shadow: 0 0 25px -5px #6b6b6b;
+  padding: 0 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all .3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+body.directions_open #directionsPanel {
+  transform: translateX(0);
+}
+
+#directionsPanel.night {
+  background: rgb(24, 38, 61);
+  box-shadow: 0 0 25px -5px #d3965d;
+}
+#directionsPanel .adp {
+  font-size: 14px;
+}
+
+#directionsPanel.night .adp,
+#directionsPanel.night .adp table {
+  color: #d3965d;
+}
+
+#directionsPanel.night .adp .adp-placemark {
+  background: #273d3f;
+  border: 1px solid #273d3f;
+}
+
+#directionsPanel.night .adp .adp-directions {
+  background: #8c97a4;
+  color: #39414e;
+}
+
+#directionsPanel .adp .adp-legal {
+  font-size: 11px;
+  padding: 0 0 2px 2px;
+}
+
+#directionsPanel.night .adp .adp-legal {
+  color: #FFF;
+}
+
+.pac-container {
+  width: 450px !important;
+  left: 115px !important;
+  top: 39px !important;
+}
